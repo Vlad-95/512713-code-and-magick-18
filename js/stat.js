@@ -12,7 +12,8 @@ var COLUMN_GAP = 50; // отступ между колонками
 var BAR_HEIGHT = 150; // максимальная высота колонки
 
 /*
-* Функция отрисовки облака*/
+* Функция отрисовки облака
+*/
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
@@ -24,7 +25,7 @@ var renderCloud = function (ctx, x, y, color) {
 * @param names - Массив с именами
 *
 * @param times - Массив с затраченным временем
-* */
+*/
 window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0,0,0,0.7)'); // Тень облака
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff'); // Облако
@@ -42,7 +43,7 @@ window.renderStatistics = function (ctx, names, times) {
   * @param arr - массив для поиска
   *
   * @return - максимальный элемент
-  * */
+  */
   var getMaxElement = function (arr) {
     var maxElement = arr[0];
 
@@ -55,7 +56,8 @@ window.renderStatistics = function (ctx, names, times) {
   };
 
   /*
-  * Получаем максимальное время*/
+  * Получаем максимальное время
+  */
   var maxTime = getMaxElement(times);
 
   // Отрисовка гистограммы
@@ -68,7 +70,7 @@ window.renderStatistics = function (ctx, names, times) {
     /*
     * Закрашиваем столбик в красный цвет, если столбик с именем "Вы"
     * Остальные закрашиваем в синий с рандомным значением насыщенности
-    * */
+    */
     if (names[i] === 'Вы') {
       ctx.fillStyle = ' rgba(255, 0, 0, 1)';
     } else {

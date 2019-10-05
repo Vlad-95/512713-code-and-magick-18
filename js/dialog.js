@@ -29,6 +29,8 @@
   var closePopup = function () {
     window.util.userDialog.classList.add('hidden');
     document.removeEventListener('keydown', onPopupEscPress);
+    window.util.userDialog.style.top = 80 + 'px';
+    window.util.userDialog.style.left = 50 + '%';
   };
 
   // Отслеживаем клик открытия окна

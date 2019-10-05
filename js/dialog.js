@@ -111,9 +111,9 @@
 
       // проверка флага
       if (dragged) {
-        var onClickPreventDefault = function (evt) {
-          evt.preventDefault();
-          dialogHandler.removeEventListener('click', onClickPreventDefault)
+        var onClickPreventDefault = function (downEvt) {
+          downEvt.preventDefault();
+          dialogHandler.removeEventListener('click', onClickPreventDefault);
         };
         dialogHandler.addEventListener('click', onClickPreventDefault);
       }

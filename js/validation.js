@@ -1,22 +1,22 @@
 'use strict';
 
 (function () {
-  var userNameInput = document.querySelector('.setup-user-name'); // инпут имени персонажа
+
 
   // Валидация формы
-  userNameInput.addEventListener('invalid', function () {
-    if (userNameInput.validity.tooShort) {
-      userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
-    } else if (userNameInput.validity.tooLong) {
-      userNameInput.setCustomValidity('Имя не должно превышать 25-ти символов');
-    } else if (userNameInput.validity.valueMissing) {
-      userNameInput.setCustomValidity('Обязательное поле');
+  window.util.userNameInput.addEventListener('invalid', function () {
+    if (window.util.userNameInput.validity.tooShort) {
+      window.util.userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
+    } else if (window.util.userNameInput.validity.tooLong) {
+      window.util.userNameInput.setCustomValidity('Имя не должно превышать 25-ти символов');
+    } else if (window.util.userNameInput.validity.valueMissing) {
+      window.util.userNameInput.setCustomValidity('Обязательное поле');
     } else {
-      userNameInput.setCustomValidity('');
+      window.util.userNameInput.setCustomValidity('');
     }
   });
 
-  userNameInput.addEventListener('input', function (evt) {
+  window.util.userNameInput.addEventListener('input', function (evt) {
     var target = evt.target;
 
     if (target.value.length < 2) {
